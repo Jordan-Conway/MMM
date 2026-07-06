@@ -2,12 +2,14 @@ use crate::data::{Station, StationColor};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Network {
-    stations : [[Option<Station>; 4]; 4]
+    stations: [[Option<Station>; 4]; 4],
 }
 
 impl Network {
     pub const fn new() -> Network {
-        return Network { stations: [[None; 4]; 4] }
+        return Network {
+            stations: [[None; 4]; 4],
+        };
     }
 
     pub fn add_station(&mut self, station: Station) -> bool {
@@ -21,7 +23,7 @@ impl Network {
                 self.stations[x][y] = Some(station);
                 true
             }
-        }
+        };
     }
 
     pub fn get_station(&self, colour: StationColor) -> Option<Station> {
@@ -53,6 +55,6 @@ fn map_color_to_position(colour: StationColor) -> (usize, usize) {
         StationColor::White => (3, 0),
         StationColor::LightGray => (3, 1),
         StationColor::Gray => (3, 2),
-        StationColor::Black => (3, 3)
-    }
+        StationColor::Black => (3, 3),
+    };
 }

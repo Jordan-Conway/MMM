@@ -1,4 +1,4 @@
-use crate::data::{Network};
+use crate::data::Network;
 
 mod data;
 

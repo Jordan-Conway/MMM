@@ -15,7 +15,7 @@ pub enum StationColor {
     White,
     LightGray,
     Gray,
-    Black
+    Black,
 }
 
 impl StationColor {
@@ -35,6 +35,6 @@ impl StationColor {
         StationColor::White,
         StationColor::LightGray,
         StationColor::Gray,
-        StationColor::Black
+        StationColor::Black,
     ];
 }
