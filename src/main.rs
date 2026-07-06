@@ -1,3 +1,8 @@
+use crate::data::{Network};
+
+mod data;
+
 fn main() {
-    println!("Hello, world!");
+    let network = Network::new();
+    println!("{:#?}", network);
 }
