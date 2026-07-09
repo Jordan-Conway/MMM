@@ -1,1 +1,1 @@
-mod network_tests;
+mod district_test;

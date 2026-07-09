@@ -1,15 +1,15 @@
-use crate::data::station_colour::StationColor;
+use crate::data::color::Color;
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct Station {
     pub name: &'static str,
-    pub colour: StationColor,
+    pub colour: Color,
     pub x: i32,
     pub y: i32,
 }
 
 impl Station {
-    pub const fn new(name: &'static str, colour: StationColor) -> Station {
+    pub const fn new(name: &'static str, colour: Color) -> Station {
         return Station {
             name: name,
             colour: colour,
@@ -21,6 +21,6 @@ impl Station {
 
 impl Default for Station {
     fn default() -> Self {
-        Self::new("", StationColor::Red)
+        Self::new("", Color::Red)
     }
 }
