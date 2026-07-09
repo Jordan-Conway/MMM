@@ -1,6 +1,11 @@
 use crate::data::{Color, District, DistrictItem, Station, district::DistrictType};
 
 #[test]
+pub fn fail() {
+    assert!(!true);
+}
+
+#[test]
 pub fn district_item_get_color_gets_station_color() {
     // Arrange
     let expected = Color::Black;
