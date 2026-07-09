@@ -1,10 +1,10 @@
-mod network;
+mod color;
+mod district;
 mod station;
-mod station_colour;
 
 #[cfg(test)]
 mod tests;
 
-pub use network::Network;
+pub use color::Color;
+pub use district::{District, DistrictItem};
 pub use station::Station;
-pub use station_colour::StationColor;
