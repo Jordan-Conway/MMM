@@ -6,5 +6,5 @@ mod station;
 mod tests;
 
 pub use color::Color;
-pub use district::{District, DistrictItem};
+pub use district::{District, DistrictItem, DistrictType};
 pub use station::Station;
