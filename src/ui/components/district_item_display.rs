@@ -1,5 +1,6 @@
 use crate::data::Color;
-use iced::widget::{Column, column, text};
+use crate::ui::util::color_util::color_to_ui_color;
+use iced::widget::{Container, column, container, text};
 use std::fmt::Display;
 
 #[derive(Debug)]
@@ -21,10 +22,19 @@ pub struct DistrictItemDisplay {
     pub item_type: DistrictItemType,
 }
 
-pub fn district_item_display<'a, Message>(value: DistrictItemDisplay) -> Column<'a, Message> {
+pub fn district_item_display<'a, Message: 'a>(
+    value: DistrictItemDisplay,
+) -> Container<'a, Message> {
     let name = text(value.name);
     let color = text(value.color.to_string());
+    let background_color = value.color.clone();
     let item_type = text(value.item_type.to_string());
 
-    column![name, color, item_type].padding(25)
+    container(
+        column![name, color, item_type]
+            .width(150)
+            .height(150)
+            .padding(25),
+    )
+    .style(move |_| container::background(color_to_ui_color(background_color)))
 }
