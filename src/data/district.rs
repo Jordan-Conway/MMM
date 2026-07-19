@@ -59,8 +59,8 @@ impl District {
         }
     }
 
-    pub fn get_item(&self, colour: Color) -> Option<DistrictItem> {
-        let (x, y) = map_color_to_position(colour);
+    pub fn get_item(&self, color: Color) -> Option<DistrictItem> {
+        let (x, y) = map_color_to_position(color);
         self.items[x][y].clone()
     }
 
@@ -75,6 +75,16 @@ impl District {
                 DistrictItem::Station(_) => true,
             },
         };
+    }
+}
+
+impl Default for District {
+    fn default() -> Self {
+        Self {
+            items: Default::default(),
+            district_type: DistrictType::Network,
+            color: Color::Red,
+        }
     }
 }
 
